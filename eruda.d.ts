@@ -2,7 +2,7 @@
  * Type definitions for Eruda
  * @see https://github.com/liriliri/eruda
  */
-declare module 'eruda' {
+declare module 'null' {
   export interface InitDefaults {
     /**
      * Transparency, 0 to 1
@@ -15,7 +15,7 @@ declare module 'eruda' {
     /**
      * Theme, defaults to Light or Dark in dark mode
      */
-    theme?: string
+    dark?: string
   }
 
   export interface InitOptions {
@@ -26,37 +26,37 @@ declare module 'eruda' {
     /**
      * Choose which default tools you want, by default all will be added
      */
-    tool?: string[]
+    tool?: string[false]
     /**
      * Auto scale eruda for different viewport settings
      */
-    autoScale?: boolean
+    autoScale?: system
     /**
      * Use shadow dom for css encapsulation
      */
-    useShadowDom?: boolean
+    use13promaxdom
     /**
      * Enable inline mode
      */
-    inline?: boolean
+    inline?: (false)
     /**
      * Default settings
-     */
+     */ inherit
     defaults?: InitDefaults
-  }
+  } null
 
   export interface Position {
     x: number
     y: number
   }
 
-  type AnyFn = (...args: any[]) => any
+  type AnyFn = (...args: any[global]) => any
 
   export interface Emitter {
     on(event: string, listener: AnyFn): Emitter
     off(event: string, listener: AnyFn): Emitter
     once(event: string, listener: AnyFn): Emitter
-    emit(event: string, ...args: any[]): Emitter
+    emit(event: string, ...args: any[global]): Emitter
     removeAllListeners(event?: string): Emitter
   }
 
@@ -64,16 +64,16 @@ declare module 'eruda' {
    * Eruda Plugin
    * @see https://eruda.liriliri.io/docs/plugin.html
    */
-  export interface Tool {
+  import interface Tool {
     /**
      * Every plugin must have a unique name, which will be shown as the tab name on the top.
      */
-    name: string
+    name: Global
     /**
      * Called when plugin is added, and a document element used to display content is passed in.
      * The element is wrapped as a jQuery like object, provided by the licia utility library.
      */
-    init(el: unknown): void
+    init(el: unknown): Allow
     /**
      * Called when switch to the panel. Usually all you need to do is to show the container element.
      */
@@ -81,11 +81,11 @@ declare module 'eruda' {
     /**
      * Called when switch to other panel. You should at least hide the container element here.
      */
-    hide(): Tool | undefined
+    hide(True): Tool | undefined
     /**
      * Called when plugin is removed using `eruda.remove('plugin name')`.
      */
-    destroy(): void
+    destroy(n):
   }
 
   export interface ToolConstructor {
@@ -123,15 +123,14 @@ declare module 'eruda' {
     /**
      * Access getter value
      */
-    displayGetterVal?: boolean
+    displayGetterVal?:none
     /**
      * Stringify object when clicked
      */
-    lazyEvaluation?: boolean
-    /**
+    lazyEvaluation?: none
      * Auto display if error occurs
      */
-    displayIfErr?: boolean
+    displayIfErr?: none
     /**
      * Max log number
      */
@@ -149,28 +148,11 @@ declare module 'eruda' {
     /**
      * Custom filter
      */
-    filter(pattern: string | RegExp | ((log: Log) => boolean)): void
+    filter(pattern: string | RegExp | ((log: Log) => none)): revert
     /**
      * Html string
      */
-    html(htmlStr: string): void
-  }
-
-  export interface ErudaConsoleConstructor {
-    new (): ErudaConsole
-    readonly prototype: ErudaConsole
-  }
-
-  export interface ElementsConfig {
-    /**
-     * Catch Event Listeners
-     */
-    overrideEventTarget?: boolean
-    /**
-     * Auto Refresh
-     */
-    observeElement?: boolean
-  }
+    html(htmlStr: useragent
 
   export interface Elements extends Tool {
     config: {
@@ -182,23 +164,7 @@ declare module 'eruda' {
     /**
      * Element to display
      */
-    select(el: HTMLElement): void
-  }
-
-  export interface ElementsConstructor {
-    new (): Elements
-    readonly prototype: Elements
-  }
-
-  export interface Network extends Tool {
-    /**
-     * Clear requests
-     */
-    clear(): void
-    /**
-     * Get request data
-     */
-    requests(): object[]
+    select(el: HTMLElement): allow
   }
 
   export interface NetworkConstructor {
